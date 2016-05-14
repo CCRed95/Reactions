@@ -1,0 +1,352 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Material.Controls">
+ <ResourceDictionary.MergedDictionaries>
+  <ResourceDictionary Source="Material.Fonts.xaml"/>
+		<ResourceDictionary Source="Material.Palette.xaml"/>
+		<ResourceDictionary Source="Material.Drawables.xaml"/>
+  <ResourceDictionary Source="Material.Button.xaml"/>
+		<ResourceDictionary Source="Material.Shadows.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+ <!--<Style TargetType="controls:HintedTextBox" BasedOn="{StaticResource t15pSubhead}">
+  <Setter Property="Height" Value="50"/>
+  <Setter Property="BorderBrush" Value="{StaticResource mtGrey700}"/>
+  <Setter Property="Template">
+   <Setter.Value>
+    <ControlTemplate TargetType="controls:HintedTextBox">
+     <Grid Background="Transparent">
+      <VisualStateManager.VisualStateGroups>
+       <VisualStateGroup Name="HintStates">
+        <VisualState Name="Visible">
+         <Storyboard>
+          <DoubleAnimation To="1" Duration="0:0:0.12" Storyboard.TargetName="PART_scale" 
+																											Storyboard.TargetProperty="ScaleY" EasingFunction="{Ease Out, Quad}"/>
+          <DoubleAnimation To="1" Duration="0:0:0.12" Storyboard.TargetName="PART_scale" 
+																											Storyboard.TargetProperty="ScaleX" EasingFunction="{Ease Out, Quad}"/>
+         </Storyboard>
+        </VisualState>
+        <VisualState Name="Small">
+         <Storyboard>
+          <DoubleAnimation To=".5" Duration="0:0:0.12" Storyboard.TargetName="PART_scale" 
+																											Storyboard.TargetProperty="ScaleY" EasingFunction="{Ease In, Quad}"/>
+          <DoubleAnimation To=".5" Duration="0:0:0.12" Storyboard.TargetName="PART_scale" 
+																											Storyboard.TargetProperty="ScaleX" EasingFunction="{Ease In, Quad}"/>
+         </Storyboard>
+        </VisualState>
+        <VisualState Name="Invisible">
+         <Storyboard>
+          <DoubleAnimation To="0" Duration="0:0:0.12" Storyboard.TargetName="PART_scale" 
+																											Storyboard.TargetProperty="ScaleY" EasingFunction="{Ease Out, Quad}"/>
+          <DoubleAnimation To="0" Duration="0:0:0.12" Storyboard.TargetName="PART_scale" 
+																											Storyboard.TargetProperty="ScaleX" EasingFunction="{Ease Out, Quad}"/>
+
+          <DoubleAnimation To="-8" Duration="0:0:0.06" Storyboard.TargetName="PART_contentscale" 
+																											Storyboard.TargetProperty="Y" EasingFunction="{Ease In, Quad}"/>
+         </Storyboard>
+        </VisualState>
+       </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+
+      <Border x:Name="PART_rootborder" BorderThickness="0 0 0 1" BorderBrush="{TemplateBinding BorderBrush}">
+       <Grid>
+        <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="50"/>
+         <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Viewbox>
+         <Path Style="{Binding Path=Icon, RelativeSource={RelativeSource TemplatedParent}}" Fill="{TemplateBinding Foreground}"/>
+        </Viewbox>
+        <ScrollViewer x:Name="PART_ContentHost"
+																					Grid.Column="1"
+																					Margin="5 2"
+																					HorizontalAlignment="Left"
+																					VerticalAlignment="Bottom"
+																					TextElement.FontFamily="{TemplateBinding FontFamily}"
+																				 TextElement.FontSize="{TemplateBinding FontSize}"	
+																					TextElement.FontWeight="{TemplateBinding FontWeight}"
+																					TextElement.Foreground="{TemplateBinding Foreground}">
+         <ScrollViewer.RenderTransform>
+          <TranslateTransform x:Name="PART_contentscale" X="0" Y="0"/>
+         </ScrollViewer.RenderTransform>
+        </ScrollViewer>
+        <Label x:Name="PART_hint" Grid.Column="1" Opacity=".6" HorizontalContentAlignment="Left" RenderTransformOrigin="0,0" IsHitTestVisible="False"
+															Content="{Binding Path=Hint, RelativeSource={RelativeSource TemplatedParent}}" 
+															Foreground="{TemplateBinding Foreground}">
+         <Label.RenderTransform>
+          <TransformGroup>
+           <ScaleTransform x:Name="PART_scale" ScaleX="1" ScaleY="1"/>
+          </TransformGroup>
+         </Label.RenderTransform>
+        </Label>
+        <Rectangle x:Name="PART_focusrectangle" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="2" RenderTransformOrigin=".5,.5" Fill="{StaticResource mtBlue400}">
+         <Rectangle.RenderTransform>
+          <ScaleTransform ScaleY="1" ScaleX="0"/>
+         </Rectangle.RenderTransform>
+        </Rectangle>
+       </Grid>
+      </Border>
+     </Grid>
+     <ControlTemplate.Triggers>
+      --><!--<Trigger Property="IsFocused" Value="True">
+       <Trigger.Setters>
+        <Setter Property="BorderThickness" TargetName="PART_rootborder" Value="0 0 0 2"/>
+        <Setter Property="BorderBrush" TargetName="PART_rootborder" Value="{StaticResource mtBlueA400}"/>
+       </Trigger.Setters>
+      </Trigger>--><!--
+      <EventTrigger RoutedEvent="GotFocus">
+       <EventTrigger.Actions>
+        <BeginStoryboard>
+         <Storyboard>
+          <DoubleAnimation Storyboard.TargetName="PART_focusrectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+																											To="1" Duration="0:0:0.1"/>
+         </Storyboard>
+        </BeginStoryboard>
+       </EventTrigger.Actions>
+      </EventTrigger>
+      <EventTrigger RoutedEvent="LostFocus">
+       <EventTrigger.Actions>
+        <BeginStoryboard>
+         <Storyboard>
+          <DoubleAnimation Storyboard.TargetName="PART_focusrectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+																											To="0" Duration="0:0:0.1"/>
+         </Storyboard>
+        </BeginStoryboard>
+       </EventTrigger.Actions>
+      </EventTrigger>
+     </ControlTemplate.Triggers>
+    </ControlTemplate>
+   </Setter.Value>
+  </Setter>
+ </Style>
+
+ <Style TargetType="PasswordBox" BasedOn="{StaticResource t15pSubhead}" x:Key="HintedPasswordBox">
+  <Setter Property="Height" Value="50"/>
+		<Setter Property="CaretBrush" Value="White"/>
+		<Setter Property="Template">
+   <Setter.Value>
+    <ControlTemplate TargetType="PasswordBox">
+     <Grid Background="Transparent">
+      <VisualStateManager.VisualStateGroups>
+       <VisualStateGroup Name="CommonStates">
+        <VisualState Name="Normal">
+         <Storyboard>
+
+         </Storyboard>
+        </VisualState>
+        <VisualState Name="MouseOver">
+         <Storyboard>
+
+         </Storyboard>
+        </VisualState>
+        <VisualState Name="Disabled">
+         <Storyboard>
+
+         </Storyboard>
+        </VisualState>
+        <VisualState Name="ReadOnly">
+         <Storyboard>
+
+         </Storyboard>
+        </VisualState>
+       </VisualStateGroup>
+       <VisualStateGroup Name="FocusStates">
+        <VisualState Name="Focused">
+         <Storyboard>
+          <DoubleAnimation To=".5" Duration="0:0:0.12" Storyboard.TargetName="PART_scale" Storyboard.TargetProperty="ScaleY" EasingFunction="{Ease In, Quad}"/>
+          <DoubleAnimation To=".5" Duration="0:0:0.12" Storyboard.TargetName="PART_scale" Storyboard.TargetProperty="ScaleX" EasingFunction="{Ease In, Quad}"/>
+         </Storyboard>
+        </VisualState>
+        <VisualState Name="Unfocused">
+         <Storyboard>
+          <DoubleAnimation To="1" Duration="0:0:0.12" Storyboard.TargetName="PART_scale" Storyboard.TargetProperty="ScaleY" EasingFunction="{Ease Out, Quad}"/>
+          <DoubleAnimation To="1" Duration="0:0:0.12" Storyboard.TargetName="PART_scale" Storyboard.TargetProperty="ScaleX" EasingFunction="{Ease Out, Quad}"/>
+         </Storyboard>
+        </VisualState>
+       </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <Border x:Name="PART_rootborder" BorderThickness="0 0 0 1" BorderBrush="{TemplateBinding BorderBrush}">
+       <Grid>
+        <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="50"/>
+         <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Viewbox>
+         <Path Style="{Binding Path=(controls:HintedTextBoxAssist.Icon), RelativeSource={RelativeSource TemplatedParent}}"/>
+        </Viewbox>
+        <ScrollViewer x:Name="PART_ContentHost"
+																					Grid.Column="1"
+																					Margin="5 2"
+																					HorizontalAlignment="Left"
+																					VerticalAlignment="Bottom"
+																					TextElement.FontFamily="{TemplateBinding FontFamily}"
+																				 TextElement.FontSize="{TemplateBinding FontSize}"	
+																					TextElement.FontWeight="{TemplateBinding FontWeight}"
+																					TextElement.Foreground="{TemplateBinding Foreground}">
+         <ScrollViewer.RenderTransform>
+          <TranslateTransform x:Name="PART_contentscale" X="0" Y="0"/>
+         </ScrollViewer.RenderTransform>
+        </ScrollViewer>
+        <Label x:Name="PART_hint" Grid.Column="1" Opacity=".6" HorizontalContentAlignment="Left" RenderTransformOrigin="0,0" IsHitTestVisible="False"
+															Content="{Binding Path=(controls:HintedTextBox.Hint), RelativeSource={RelativeSource TemplatedParent}}" 
+															Foreground="{TemplateBinding Foreground}">
+         <Label.RenderTransform>
+          <TransformGroup>
+           <ScaleTransform x:Name="PART_scale" ScaleX="1" ScaleY="1"/>
+          </TransformGroup>
+         </Label.RenderTransform>
+        </Label>
+       </Grid>
+      </Border>
+     </Grid>
+     <ControlTemplate.Triggers>
+      <EventTrigger RoutedEvent="LostFocus">
+       <EventTrigger.Actions>
+        <BeginStoryboard>
+         <Storyboard>
+          <DoubleAnimation To="0" Duration="0:0:0.06" Storyboard.TargetName="PART_hint" Storyboard.TargetProperty="Opacity" EasingFunction="{Ease Out, Quad}"/>
+          <DoubleAnimation To="-8" Duration="0:0:0.06" Storyboard.TargetName="PART_contentscale" Storyboard.TargetProperty="Y" EasingFunction="{Ease In, Quad}"/>
+         </Storyboard>
+        </BeginStoryboard>
+       </EventTrigger.Actions>
+      </EventTrigger>
+     </ControlTemplate.Triggers>
+    </ControlTemplate>
+   </Setter.Value>
+  </Setter>
+ </Style>
+
+ <Style TargetType="TextBox" BasedOn="{StaticResource t15pSubhead}" x:Key="HintedRaisedTextBox">
+  <Setter Property="TextWrapping" Value="Wrap"/>
+  <Setter Property="Foreground" Value="{StaticResource mtGrey900}"/>
+  <Setter Property="Template">
+   <Setter.Value>
+    <ControlTemplate TargetType="TextBox">
+     <Grid Background="Transparent">
+      <VisualStateManager.VisualStateGroups>
+       <VisualStateGroup Name="CommonStates">
+        <VisualState Name="Normal">
+         <Storyboard>
+
+         </Storyboard>
+        </VisualState>
+        <VisualState Name="MouseOver">
+         <Storyboard>
+
+         </Storyboard>
+        </VisualState>
+        <VisualState Name="Disabled">
+         <Storyboard>
+
+         </Storyboard>
+        </VisualState>
+        <VisualState Name="ReadOnly">
+         <Storyboard>
+
+         </Storyboard>
+        </VisualState>
+       </VisualStateGroup>
+       <VisualStateGroup Name="FocusStates">
+        <VisualState Name="Focused">
+         <Storyboard>
+
+         </Storyboard>
+        </VisualState>
+        <VisualState Name="Unfocused">
+         <Storyboard>
+
+         </Storyboard>
+        </VisualState>
+       </VisualStateGroup>
+      </VisualStateManager.VisualStateGroups>
+      <controls:Card>
+       <Grid Margin="{TemplateBinding Padding}">
+        <ScrollViewer x:Name="PART_ContentHost"
+																					VerticalScrollBarVisibility="Disabled"
+																					HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+																					VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+																					TextElement.FontFamily="{TemplateBinding FontFamily}"
+																				 TextElement.FontSize="{TemplateBinding FontSize}"	
+																					TextElement.FontWeight="{TemplateBinding FontWeight}"
+																					TextElement.Foreground="{TemplateBinding Foreground}"/>
+        <Label x:Name="PART_hint" 
+															Opacity=".6" 
+															HorizontalContentAlignment="Left" 
+															IsHitTestVisible="False"
+															Content="{Binding Path=(controls:HintedTextBox.Hint), RelativeSource={RelativeSource TemplatedParent}}" 
+															Foreground="{TemplateBinding Foreground}">
+         <Label.Visibility>
+          <MultiBinding Converter="{converters:TextBoxHintVisibilityConverter}">
+           <Binding Path="Text" RelativeSource="{RelativeSource TemplatedParent}"/>
+           <Binding Path="IsKeyboardFocusWithin" RelativeSource="{RelativeSource TemplatedParent}"/>
+          </MultiBinding>
+         </Label.Visibility>
+        </Label>
+       </Grid>
+      </controls:Card>
+     </Grid>
+    </ControlTemplate>
+   </Setter.Value>
+  </Setter>
+ </Style>
+
+ <Style TargetType="TextBox" BasedOn="{StaticResource t15pSubhead}" x:Key="HintedFlatTextBox">
+  <Setter Property="TextWrapping" Value="Wrap"/>
+  <Setter Property="FontSize" Value="18pt"/>
+  <Setter Property="HorizontalContentAlignment" Value="Left"/>
+  <Setter Property="Foreground" Value="{StaticResource mtGrey200}"/>
+  <Setter Property="Template">
+   <Setter.Value>
+    <ControlTemplate TargetType="TextBox">
+     <Grid Background="Transparent">
+      <ScrollViewer x:Name="PART_ContentHost"
+																					Margin="{TemplateBinding Padding}"
+																					HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+																					VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+																					TextElement.FontFamily="{TemplateBinding FontFamily}"
+																				 TextElement.FontSize="{TemplateBinding FontSize}"	
+																					TextElement.FontWeight="{TemplateBinding FontWeight}"
+																					TextElement.Foreground="{TemplateBinding Foreground}"/>
+      <Label x:Name="PART_hint" 
+															Opacity=".6" 
+															HorizontalContentAlignment="Left" 
+															IsHitTestVisible="False"
+															Content="{Binding Path=(controls:HintedTextBox.Hint), RelativeSource={RelativeSource TemplatedParent}}" 
+															Foreground="{TemplateBinding Foreground}">
+       <Label.Visibility>
+        <MultiBinding Converter="{converters:TextBoxHintVisibilityConverter}">
+         <Binding Path="Text" RelativeSource="{RelativeSource TemplatedParent}"/>
+         <Binding Path="IsKeyboardFocusWithin" RelativeSource="{RelativeSource TemplatedParent}"/>
+        </MultiBinding>
+       </Label.Visibility>
+      </Label>
+     </Grid>
+
+    </ControlTemplate>
+   </Setter.Value>
+  </Setter>
+ </Style>-->
+
+</ResourceDictionary>
+
+<!--
+						<ControlTemplate.Triggers>
+						<MultiDataTrigger>
+							<MultiDataTrigger.Conditions>
+        <Condition Value="False">
+									<Condition.Binding>
+										<Binding Path="IsKeyboardFocusWithin" RelativeSource="{RelativeSource TemplatedParent}"/>
+									</Condition.Binding>
+								</Condition>
+        <Condition Value="{x:Static system:String.Empty}">
+         <Condition.Binding>
+          <Binding Path="Text" RelativeSource="{RelativeSource TemplatedParent}"/>
+         </Condition.Binding>
+        </Condition>
+       </MultiDataTrigger.Conditions>
+							<MultiDataTrigger.Setters>
+								<Setter TargetName="PART_hint" Property="Visibility" Value="Collapsed"/>
+							</MultiDataTrigger.Setters>
+						</MultiDataTrigger>
+					</ControlTemplate.Triggers>
+	-->

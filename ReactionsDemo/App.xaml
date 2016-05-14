@@ -1,9 +1,18 @@
 ﻿<Application x:Class="ReactionsDemo.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ReactionsDemo"
-             StartupUri="MainWindow.xaml">
-    <Application.Resources>
-         
-    </Application.Resources>
+             xmlns:reactionsDemo="clr-namespace:ReactionsDemo">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary>
+					<ResourceDictionary.MergedDictionaries>
+						<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Generic.xaml"/>
+						<!--<ResourceDictionary Source="pack://application:,,,/FlexTraveler;component/Themes/Material.xaml"/>-->
+					</ResourceDictionary.MergedDictionaries>
+					<reactionsDemo:AppBootstrapper x:Key="bootstrapper" />
+				</ResourceDictionary>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>

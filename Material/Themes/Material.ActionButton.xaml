@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="Material.Drawables.xaml"/>
+  <ResourceDictionary Source="Material.Button.xaml"/>
+  <ResourceDictionary Source="Material.Shadows.xaml"/>
+ </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

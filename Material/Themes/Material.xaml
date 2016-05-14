@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.Fonts.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.DefinedBrushes.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.Palette.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.Drawables.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.Shadows.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.Button.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.Shell.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.Card.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.ActionButton.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.TabControl.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.TextBox.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/Material;component/Themes/Material.ListView.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
