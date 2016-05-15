@@ -6,7 +6,7 @@ using System.Windows.Media.Animation;
 
 namespace Reactions.Recursive
 {
-	public class IterativeListViewAnimationReaction : IterativeAnimationReactionBase<ListView>
+	public class IterativeListViewAnimationReaction : IterativeAnimationReactionBase//<ListView>
 	{
 		//TODO call base.React?
 		//[TraceAspect]

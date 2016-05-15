@@ -2,7 +2,7 @@
 using System.Windows.Markup;
 using System.Windows.Media.Animation;
 
-namespace Reactions.Markup.Extensions
+namespace Material.Markup.Extensions
 {
 	public class EaseExtension : MarkupExtension
 	{

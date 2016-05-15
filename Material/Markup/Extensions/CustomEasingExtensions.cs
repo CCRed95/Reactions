@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Media.Animation;
 
-namespace Reactions.Markup.Extensions
+namespace Material.Markup.Extensions
 {
 	public static class CustomEasingExtensions
 	{

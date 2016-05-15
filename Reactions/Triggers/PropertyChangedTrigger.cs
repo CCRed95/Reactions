@@ -3,7 +3,7 @@ using Core.Helpers.DependencyHelpers;
 
 namespace Reactions.Triggers
 {
-	public class PropertyChangedTrigger : DynamicTriggerBase
+	public class PropertyChangedTrigger : ReactiveTriggerBase
 	{
 		public static readonly DependencyProperty TargetProperty = DP.Register(
 			new Meta<PropertyChangedTrigger, object>(null, onTargetChanged));

@@ -1,6 +1,6 @@
 ﻿namespace Reactions.Triggers
 {
-	public class DynamicConditionalTrigger : DynamicTriggerBase
+	public class DynamicConditionalTrigger : ReactiveTriggerBase
 	{
 		 
 	}

@@ -45,8 +45,8 @@ namespace Reactions.Recursive
 		public ElementSelectorBase ElementSelector { get; set; }
 	}
 
-	public abstract class IterativeAnimationReactionBase<T> : IterativeAnimationReactionBase
-	{
+	//public abstract class IterativeAnimationReactionBase<T> : IterativeAnimationReactionBase
+	//{
 
-	}
+	//}
 }

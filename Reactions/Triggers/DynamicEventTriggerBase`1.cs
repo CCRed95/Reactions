@@ -1,6 +1,6 @@
 ﻿namespace Reactions.Triggers
 {
-	public abstract class DynamicEventTriggerBase<T> : DynamicEventTriggerBase where T : class
+	public abstract class DynamicEventTriggerBase<T> : ReactiveEventTriggerBase where T : class
 	{
 		public T Source
 		{

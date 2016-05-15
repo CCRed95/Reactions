@@ -9,6 +9,7 @@ using Reactions.Recursive;
 
 namespace Reactions.Collections
 {
+	//TODO make a IAttachedObject replacement interface locally and remove Sys.Win.Interactivity Behavior project reference 
 	public abstract class AttachedElementCollection<T> : DependencyObjectCollection<T>, IAttachedObject where T : AttachableBase
 	{
 		private Collection<T> snapshot;

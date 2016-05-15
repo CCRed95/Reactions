@@ -15,11 +15,11 @@
 												SelectedValue="{Binding SelectedData, Mode=OneWayToSource}"
 												IsSynchronizedWithCurrentItem="False">
 			<React.Storyboards>
-				<DynamicStoryboard Name="revealStoryboard">
-					<DynamicStoryboard.DynamicTriggers>
+				<ReactiveStoryboard>
+					<ReactiveStoryboard.DynamicTriggers>
 						<DynamicEventTrigger SourceObject="{Binding ElementName=PART_diallistview}" EventName="Loaded"/>
-					</DynamicStoryboard.DynamicTriggers>
-					<DynamicStoryboard.Reactions>
+					</ReactiveStoryboard.DynamicTriggers>
+					<ReactiveStoryboard.Reactions>
 						<IterativeListViewAnimationReaction x:Name="fadeInAnimation" 
 																																		TargetName="PART_content" 
 																																		TargetProperty="{x:Static FrameworkElement.OpacityProperty}"
@@ -35,9 +35,9 @@
 																																		From="-100" To="0" 
 																																		EasingFunction="{Ease Out, Back, .4}" 
 																																		DurationMode="StepDuration"/>
-					</DynamicStoryboard.Reactions>
+					</ReactiveStoryboard.Reactions>
 
-				</DynamicStoryboard>
+				</ReactiveStoryboard>
 			</React.Storyboards>
 			<ListView.ItemContainerStyle>
 				<Style TargetType="ListViewItem">
@@ -75,7 +75,7 @@
 								<RowDefinition Height="5*"/>
 								<RowDefinition Height="1*"/>
 							</Grid.RowDefinitions>
-							<Ellipse Grid.Row="1" Effect="{StaticResource MaterialDesignShadowDepth1}" Fill="{StaticResource mtTeal600}">
+							<Ellipse Grid.Row="1" Effect="{StaticResource MaterialDesignShadowDepth2}" Fill="{StaticResource mtTeal600}">
 								<Ellipse.Width>
 									<Binding RelativeSource="{RelativeSource Self}" Path="ActualHeight"/>
 								</Ellipse.Width>
@@ -99,3 +99,4 @@
 		</ListView>
 	</Grid>
 </Window>
+

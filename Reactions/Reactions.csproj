@@ -51,10 +51,9 @@
   <ItemGroup>
     <Compile Include="Collections\AttachedElementCollection.cs" />
     <Compile Include="Collections\DependencyObjectCollection.cs" />
-    <Compile Include="Collections\DynamicStoryboardCollection.cs" />
-    <Compile Include="Collections\DynamicTriggerCollection.cs" />
+    <Compile Include="Collections\ReactiveStoryboardCollection.cs" />
+    <Compile Include="Collections\ReactiveTriggerCollection.cs" />
     <Compile Include="Collections\HostedAttachedElementCollection.cs" />
-    <Compile Include="Collections\IterativeAnimationCollection.cs" />
     <Compile Include="Collections\ReactionCollection.cs" />
     <Compile Include="Core\AttachableBase.cs" />
     <Compile Include="Core\AttachableReactionBase.cs" />
@@ -64,16 +63,12 @@
     <Compile Include="Core\IReactionHostTarget.cs" />
     <Compile Include="Helpers\NameResolvedEventArgs.cs" />
     <Compile Include="Helpers\NameResolver.cs" />
-    <Compile Include="Markup\Extensions\CustomEasingExtensions.cs" />
-    <Compile Include="Markup\Extensions\CustomEasingMode.cs" />
-    <Compile Include="Markup\Extensions\EaseExtension.cs" />
-    <Compile Include="Markup\Extensions\EasingType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Recursive\DynamicStoryboard.cs" />
+    <Compile Include="Recursive\DurationMode.cs" />
+    <Compile Include="Recursive\ReactiveStoryboard.cs" />
     <Compile Include="Recursive\IterativeAnimationReactionBase.cs" />
     <Compile Include="Recursive\IterativeListViewAnimationReaction.cs" />
     <Compile Include="Recursive\React.cs" />
-    <Compile Include="Recursive\RecursiveAnimator.cs" />
     <Compile Include="Recursive\Targeting\ElementSelectorBase.cs" />
     <Compile Include="Recursive\Targeting\MethodCallSelector.cs" />
     <Compile Include="Recursive\Targeting\MethodParameterList.cs" />
@@ -82,9 +77,10 @@
     <Compile Include="Triggers\CommandTargetTrigger.cs" />
     <Compile Include="Triggers\DynamicConditionalTrigger.cs" />
     <Compile Include="Triggers\DynamicEventTrigger.cs" />
-    <Compile Include="Triggers\DynamicEventTriggerBase.cs" />
+    <Compile Include="Triggers\_TESTReactiveEventTriggerBase.cs" />
+    <Compile Include="Triggers\ReactiveEventTriggerBase.cs" />
     <Compile Include="Triggers\DynamicEventTriggerBase`1.cs" />
-    <Compile Include="Triggers\DynamicTriggerBase.cs" />
+    <Compile Include="Triggers\ReactiveTriggerBase.cs" />
     <Compile Include="Triggers\PropertyChangedTrigger.cs" />
   </ItemGroup>
   <ItemGroup>

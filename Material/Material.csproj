@@ -132,6 +132,10 @@
   <ItemGroup>
     <Compile Include="Markup\Converters\CardClipConverter.cs" />
     <Compile Include="Markup\Converters\ShadowConverter.cs" />
+    <Compile Include="Markup\Extensions\CustomEasingExtensions.cs" />
+    <Compile Include="Markup\Extensions\CustomEasingMode.cs" />
+    <Compile Include="Markup\Extensions\EaseExtension.cs" />
+    <Compile Include="Markup\Extensions\EasingType.cs" />
     <Compile Include="Markup\TypeConverters\DescriptorConverter.cs" />
     <Compile Include="Markup\TypeConverters\MaterialConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

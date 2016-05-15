@@ -8,13 +8,13 @@ using Reactions.Recursive;
 
 namespace Reactions.Triggers
 {
-	public abstract class DynamicEventTriggerBase : DynamicTriggerBase
+	public abstract class ReactiveEventTriggerBase : ReactiveTriggerBase
 	{
 		public static readonly DependencyProperty SourceObjectProperty = DP.Register(
-			new Meta<DynamicEventTriggerBase, object>(null, OnSourceObjectChanged));
+			new Meta<ReactiveEventTriggerBase, object>(null, OnSourceObjectChanged));
 
 		public static readonly DependencyProperty SourceNameProperty = DP.Register(
-			new Meta<DynamicEventTriggerBase, string>(null, OnSourceNameChanged));
+			new Meta<ReactiveEventTriggerBase, string>(null, OnSourceNameChanged));
 
 		private bool isSourceChangedRegistered;
 		private NameResolver sourceNameResolver;
@@ -77,7 +77,7 @@ namespace Reactions.Triggers
 
 		protected bool IsLoadedRegistered { get; set; }
 
-		protected DynamicEventTriggerBase()
+		protected ReactiveEventTriggerBase()
 		{
 			sourceNameResolver = new NameResolver();
 			RegisterSourceChanged();
@@ -115,7 +115,7 @@ namespace Reactions.Triggers
 		{
 			base.OnAttached();
 			var obj1 = AssociatedObject;
-			var dynamicStoryboard = obj1 as DynamicStoryboard;
+			var dynamicStoryboard = obj1 as ReactiveStoryboard;
 			var frameworkElement = obj1 as FrameworkElement;
 			if (dynamicStoryboard != null)
 			{
@@ -147,7 +147,7 @@ namespace Reactions.Triggers
 		protected override void OnDetaching()
 		{
 			base.OnDetaching();
-			var dynamicStoryboard = AssociatedObject as DynamicStoryboard;
+			var dynamicStoryboard = AssociatedObject as ReactiveStoryboard;
 			var associatedElement = AssociatedObject as FrameworkElement;
 			try
 			{
@@ -174,13 +174,13 @@ namespace Reactions.Triggers
 		}
 
 		//[TraceAspect]
-		private static void OnSourceNameChanged(DynamicEventTriggerBase obj, DPChangedEventArgs<string> e)
+		private static void OnSourceNameChanged(ReactiveEventTriggerBase obj, DPChangedEventArgs<string> e)
 		{
 			obj.SourceNameResolver.Name = e.NewValue;
 		}
 
 		//[TraceAspect]
-		private static void OnSourceObjectChanged(DynamicEventTriggerBase obj, DPChangedEventArgs<object> e)
+		private static void OnSourceObjectChanged(ReactiveEventTriggerBase obj, DPChangedEventArgs<object> e)
 		{
 			var newSource = obj.SourceNameResolver.Object;
 			if (e.NewValue == null)
@@ -255,7 +255,7 @@ namespace Reactions.Triggers
       }
       else
       {
-        eventHandlerMethodInfo = typeof (DynamicEventTriggerBase).GetMethod("OnEventImpl", BindingFlags.Instance | BindingFlags.NonPublic);
+        eventHandlerMethodInfo = typeof (ReactiveEventTriggerBase).GetMethod("OnEventImpl", BindingFlags.Instance | BindingFlags.NonPublic);
         @event.AddEventHandler(obj, Delegate.CreateDelegate(@event.EventHandlerType, this, eventHandlerMethodInfo));
       }
     }

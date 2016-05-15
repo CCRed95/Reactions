@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace Reactions.Triggers
 {
-	public class CommandTargetTrigger : DynamicTriggerBase, ICommand
+	public class CommandTargetTrigger : ReactiveTriggerBase, ICommand
 	{
 		protected override void OnAttached()
 		{

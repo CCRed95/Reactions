@@ -10,25 +10,25 @@ namespace Reactions.Recursive
 	//TODO is reinheriting IAttachedObject necessary if already inheriting attachablebase?
 	[ContentProperty("Reactions")]
 	[RuntimeNameProperty("Name")]
-	public class DynamicStoryboard : AttachableBase, IAttachedObject, IReactionHostTarget
+	public class ReactiveStoryboard : AttachableBase, IAttachedObject, IReactionHostTarget
 	{
 		private static readonly DependencyPropertyKey DynamicTriggersPropertyKey = DependencyProperty.RegisterReadOnly("DynamicTriggers",
-			typeof(DynamicTriggerCollection), typeof(DynamicStoryboard), new FrameworkPropertyMetadata());
+			typeof(ReactiveTriggerCollection), typeof(ReactiveStoryboard), new FrameworkPropertyMetadata());
 		public static readonly DependencyProperty DynamicTriggersProperty = DynamicTriggersPropertyKey.DependencyProperty;
 
 		private static readonly DependencyPropertyKey ReactionsPropertyKey = DependencyProperty.RegisterReadOnly("Reactions",
-			typeof(ReactionCollection), typeof(DynamicStoryboard), new FrameworkPropertyMetadata());
+			typeof(ReactionCollection), typeof(ReactiveStoryboard), new FrameworkPropertyMetadata());
 		public static readonly DependencyProperty ReactionsProperty = ReactionsPropertyKey.DependencyProperty;
 
-		public DynamicTriggerCollection DynamicTriggers => (DynamicTriggerCollection)GetValue(DynamicTriggersProperty);
+		public ReactiveTriggerCollection DynamicTriggers => (ReactiveTriggerCollection)GetValue(DynamicTriggersProperty);
 
 		public ReactionCollection Reactions => (ReactionCollection)GetValue(ReactionsProperty);
 
 		public string Name { get; set; }
 
-		public DynamicStoryboard()
+		public ReactiveStoryboard()
 		{
-			SetValue(DynamicTriggersPropertyKey, new DynamicTriggerCollection());
+			SetValue(DynamicTriggersPropertyKey, new ReactiveTriggerCollection());
 			SetValue(ReactionsPropertyKey, new ReactionCollection());
 		}
 
@@ -53,13 +53,13 @@ namespace Reactions.Recursive
 		//[TraceAspect]
 		void IReactionHostTarget.Execute(HostedAttachableBase source)
 		{
-			var sourceTrigger = source as DynamicTriggerBase;
+			var sourceTrigger = source as ReactiveTriggerBase;
 			if (sourceTrigger != null)
 				OnDynamicTriggerFired(sourceTrigger);
 		}
 
 		//[TraceAspect]
-		protected virtual void OnDynamicTriggerFired(DynamicTriggerBase sourceTrigger)
+		protected virtual void OnDynamicTriggerFired(ReactiveTriggerBase sourceTrigger)
 		{
 			Reactions.React();
 		}

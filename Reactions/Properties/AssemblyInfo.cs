@@ -23,5 +23,3 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition(@"http://schemas.microsoft.com/winfx/2006/xaml/presentation", "Reactions.Recursive")]
 [assembly: XmlnsDefinition(@"http://schemas.microsoft.com/winfx/2006/xaml/presentation", "Reactions.Recursive.Targeting")]
 [assembly: XmlnsDefinition(@"http://schemas.microsoft.com/winfx/2006/xaml/presentation", "Reactions.Triggers")]
-
-[assembly: XmlnsDefinition(@"http://schemas.microsoft.com/winfx/2006/xaml/presentation", "Reactions.Markup.Extensions")]

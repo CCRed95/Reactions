@@ -1,4 +1,4 @@
-﻿namespace Reactions.Markup.Extensions
+﻿namespace Material.Markup.Extensions
 {
 	public enum CustomEasingMode
 	{
