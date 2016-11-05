@@ -55,6 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Static\Descriptors.cs" />
+    <Compile Include="Static\ExtendedPalette.cs" />
+    <Compile Include="Static\IconVectors.cs" />
+    <Compile Include="Static\LegacyPalette.cs" />
+    <Compile Include="Static\Palette.cs" />
+    <Compile Include="Static\RecommendedThemeSet.cs" />
+    <Compile Include="Static\ResourceProvider.cs" />
+    <Compile Include="Static\Text.cs" />
+    <Compile Include="Static\ThemeExtension.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,11 +72,28 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\Behaviors\CustomWindowCommandBinder.cs" />
     <Compile Include="Controls\Assists\ShadowAssist.cs" />
     <Compile Include="Controls\Card.cs" />
+    <Compile Include="Controls\Primitives\MaterialSetEnum.cs" />
+    <Compile Include="Controls\Primitives\MD.cs" />
+    <Compile Include="Controls\Primitives\MDBrushEnum.cs" />
+    <Compile Include="Controls\Primitives\Theme.cs" />
+    <Compile Include="Controls\Primitives\VisualFeedback.cs" />
+    <Compile Include="Controls\Ripples\DynamicEllipseGeometryMaskConverter.cs" />
+    <Compile Include="Controls\Ripples\DynamicRippleDiameterConverter.cs" />
+    <Compile Include="Controls\Ripples\DynamicRipplePlacementConverter.cs" />
+    <Compile Include="Controls\Ripples\RippleFinal.cs" />
+    <Compile Include="Controls\Ripples\RippleMouseTracker.cs" />
+    <Compile Include="Controls\Ripples\TransitionRippleSizeConverter.cs" />
+    <Compile Include="Controls\Shadows\Shadow.cs" />
+    <Compile Include="Controls\Shadows\ShadowInterpolator.cs" />
     <Compile Include="Design\AccentedMaterialSet.cs" />
+    <Compile Include="Design\LengthDescriptor.cs" />
     <Compile Include="Design\Luminosity.cs" />
     <Compile Include="Design\MaterialSet.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\MediaExtensions.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -136,6 +162,7 @@
     <Compile Include="Markup\Extensions\CustomEasingMode.cs" />
     <Compile Include="Markup\Extensions\EaseExtension.cs" />
     <Compile Include="Markup\Extensions\EasingType.cs" />
+    <Compile Include="Markup\MarkupExtensions\MaterialExtension.cs" />
     <Compile Include="Markup\TypeConverters\DescriptorConverter.cs" />
     <Compile Include="Markup\TypeConverters\MaterialConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -164,10 +191,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Design\Descriptors\" />
-    <Folder Include="Design\Providers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{a0548d0f-5e32-428f-972f-3611c7f5cb32}</Project>

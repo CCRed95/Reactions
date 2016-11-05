@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Interactivity;
 
 namespace Reactions.Core
 {
 	//TODO (HERE AND HOST BASE, also on custom collection implementations!) should call changed event on detatched? double firing for one change? Seperate event for detached events?
 	//TODO custom eventhandler type for passing new and old associated objects Eventargs
+	//TODO Pick a name, attach... or associated!
 	public abstract class AttachableBase : DependencyObject, IAttachedObject
 	{
+		public bool IsAssociated => AssociatedObject != null;
+		
 		public DependencyObject AssociatedObject { get; protected set; }
 
 		DependencyObject IAttachedObject.AssociatedObject => AssociatedObject;
 
 		public event EventHandler AssociatedObjectChanged;
-
-		//[TraceAspect]
+		
 		public void Attach(DependencyObject dependencyObject)
 		{
 			if (dependencyObject == AssociatedObject)
@@ -32,17 +33,14 @@ namespace Reactions.Core
 			OnAttached();
 		}
 
-		//[TraceAspect]
 		public void Detach()
 		{
 			OnDetaching();
 			AssociatedObject = null;
 		}
-
-		//[TraceAspect]
+		
 		protected virtual void OnAttached() { }
-
-		//[TraceAspect]
+		
 		protected virtual void OnDetaching() { }
 	}
 }

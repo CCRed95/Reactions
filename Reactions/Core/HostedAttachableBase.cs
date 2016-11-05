@@ -33,21 +33,16 @@ namespace Reactions.Core
 			HostObject = reactionHostTarget;
 			HostObjectChanged?.Invoke(this, new EventArgs());
 			OnHostRegistered();
-			//Logger.ExitMethod();
 		}
-
-		//[TraceAspect]
+		
 		public void UnregisterHost()
 		{
-			//Logger.EnterMethod();
 			OnHostUnregistering();
 			HostObject = null;
 		}
-
-		//[TraceAspect]
+		
 		public virtual void OnHostRegistered() { }
-
-		//[TraceAspect]
+		
 		public virtual void OnHostUnregistering() { }
 	}
 }

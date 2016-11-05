@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Core.Helpers.CLREventHelpers;
 using Core.Helpers.DependencyHelpers;
 
 namespace Core.Extensions
@@ -17,6 +18,14 @@ namespace Core.Extensions
 		public static bool TryInvoke<T>(this PropertyValidate<T> i, object value)
 		{
 			return i == null || i.Invoke((T)value);
+		}
+		public static void Raise<T1>(this ParameterizedEventHandler<T1> i, T1 p1)
+		{
+			i?.Invoke(p1);
+		}
+		public static void Raise<T1, T2>(this ParameterizedEventHandler<T1, T2> i, T1 p1, T2 p2)
+		{
+			i?.Invoke(p1, p2);
 		}
 	}
 }

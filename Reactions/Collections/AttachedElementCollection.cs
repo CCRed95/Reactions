@@ -3,9 +3,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Interactivity;
 using Reactions.Core;
-using Reactions.Recursive;
 
 namespace Reactions.Collections
 {
@@ -14,7 +12,9 @@ namespace Reactions.Collections
 	{
 		private Collection<T> snapshot;
 
-		protected DependencyObject AssociatedObject { get; private set; }
+		public bool IsAssociated => AssociatedObject != null;
+		
+		public DependencyObject AssociatedObject { get; private set; }
 
 		DependencyObject IAttachedObject.AssociatedObject => AssociatedObject;
 

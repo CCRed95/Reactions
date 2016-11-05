@@ -1,19 +1,25 @@
-﻿using Reactions.Core;
+﻿using System;
+using Reactions.Core;
 
 namespace Reactions.Triggers
 {
-	//TODO tracking/assert/handle trigger execution failures for hosting target issues, etc
 	public abstract class ReactiveTriggerBase : HostedAttachableBase
 	{
-		//[TraceAspect]
-		internal virtual void Execute()
+		public void Execute()
 		{
 			if (IsHosted)
+			{
 				HostObject.Execute(this);
+				ExecuteImpl();
+			}
 			else
 			{
-				
+				throw new NotSupportedException($"Cannot execute trigger type \'{GetType().Name}\' because it is not hosted.");
 			}
+		}
+
+		protected virtual void ExecuteImpl()
+		{
 		}
 	}
 }
